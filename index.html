@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <title>Flashcarder</title>
+</head>
+<body>
+    <div class="supreme-container">
+        <a class="home" href="/"><h1>Flashcards</h1></a>
+        <div class="top-container">
+            <div class="import-container">
+                <p><strong>Import a deck to play (.json):</strong></p>
+                <input type="file" name="file-select" id="file-select" accept=".json">
+            </div>
+            <div class="new-deck-container">
+                <hr style="margin-top: 4vh;">
+                <p><strong>Create new deck:</strong></p>
+                <form target="frame" id="flashcard-form">
+                    <div class="form-line">
+                        <label for="title">Set Title:</label>
+                        <input type="text" name="title" id="title" autofocus required>
+                    </div>
+                    <div class="form-line">
+                        <label for="front">Front (Clue):</label>
+                        <input type="text" name="front" id="front" required>
+                    </div>
+                    <div class="form-line">
+                        <label for="back">Back (Answer):</label>
+                        <input type="text" name="back" id="back" required>
+                    </div>
+                    <div class="form-line">
+                        <button id="go">Enter</button>
+                    </div>
+                </form>
+                <button id="export-json" style="display: none;">Export deck as JSON</button>
+            </div>
+            <div class="add-container">
+                <hr style="margin-top: 4vh">
+                <p><strong>Add to an existing deck:</strong></p>
+                <input type="file" name="add-deck-select" id="add-deck-select" accept=".json">
+                <form target="frame" id="add-card-form" style="display: none;">
+                    <div class="form-line">
+                        <label for="title-added">Set Title:</label>
+                        <input type="text" name="title-added" id="title-added" required>
+                    </div>
+                    <div class="form-line">
+                        <label for="add-front">Front (Clue):</label>
+                        <input type="text" name="add-front" id="add-front" required>
+                    </div>
+                    <div class="form-line">
+                        <label for="add-back">Back (Answer):</label>
+                        <input type="text" name="add-back" id="add-back" required>
+                    </div>
+                    <div class="form-line">
+                        <button id="add-go">Enter</button>
+                    </div>
+                </form>
+                <button id="export-added-json" style="display: none; margin-bottom: 2vh">Export deck as JSON</button>
+            </div>
+        </div>
+        <div class="main-container">
+            <div id="printout"></div>
+        </div>
+        <div class="play-container">
+            <div class="flashcard">
+                <div class="flashcard-subtitle"></div>
+                <div id="flashcard-text-front" class="flashcard-text"></div>
+                <div id="flashcard-text-back" class="flashcard-text" style="display: none"></div>
+            </div>
+        </div>
+        <iframe name="frame" src="" style="display: none;"></iframe>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

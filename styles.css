@@ -1,0 +1,57 @@
+body {
+    font-family: sans-serif;
+    margin-left: 1vw; margin-right: 1vw;
+}
+
+.home, .home:visited{
+    text-decoration: none;
+    color: black;
+}
+
+.import-container {
+   margin-top: 4vh; margin-bottom: 4vh
+}
+
+.form-line {
+    margin-top: 2vh; margin-bottom: 2vh;
+}
+
+#export-json {
+    margin-bottom: 2vh;
+}
+
+.printed-card {
+    border: 2px solid darkgray;
+    border-radius: 6px;
+    padding: 1px 10px;
+    margin-bottom: 2vh;
+}
+
+.play-container {
+    display: none;
+    height: 80vh; width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.flashcard {
+    height: 70vh;
+    width: 45vw;
+    border: 3px solid gray;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    padding: 0% 5%;
+}
+
+.flashcard-text {
+    font-size: 3em;
+    text-align: center;
+}
+
+.flashcard-subtitle {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
